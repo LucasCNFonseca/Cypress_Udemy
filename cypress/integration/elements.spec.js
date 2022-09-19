@@ -32,7 +32,6 @@ describe('Work with basic elements', () => {
         cy.get('#formNome').type('Cypress Test')
         cy.get('#formNome').should('have.value', 'Cypress Test')
 
-        // XXX:XXX => XXX\\:XXX
         cy.get('#elementosForm\\:sugestoes')
             .type('textarea')
             .should('have.value', 'textarea')
@@ -86,7 +85,7 @@ describe('Work with basic elements', () => {
             .select('1graucomp')
             .should('have.value', '1graucomp')
     
-        //TODO Validar as opçoes do combo
+        //TODO Validar as opções do combo
     })
 
     it.only('Combo multiplo', () => {
