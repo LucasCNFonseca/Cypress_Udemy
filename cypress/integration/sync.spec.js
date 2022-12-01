@@ -58,7 +58,7 @@ describe('Esperas...', () => {
             .should('contain', 'Item 2')  
     })
 
-    it.only('Uso do timeout', () => {
+    it('Uso do timeout', () => {
         // cy.get('#buttonDelay')
         //     .click()
 
@@ -79,4 +79,25 @@ describe('Esperas...', () => {
         cy.get('#lista li span', {timeout: 30000})
             .should('have.length', 2)
     })
+
+    it('Click retry', () => {
+        cy.get('#buttonCount')
+            .dblclick()
+            .should('have.value', '111')
+    })
+
+    it.only('Should vs Then', () => {
+        cy.get('#buttonListDOM')
+        //     .click()
+        // cy.get('#lista li span')
+            .then($el => {
+                // console.log($el)
+                expect($el).to.have.length(1)
+                // return 2
+                cy.get('#buttonList')
+            })
+            // .and('eq', 2)
+            // .and('not.have.id', 'buttonListDOM')
+    })
+
 })
